@@ -1,73 +1,127 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        xurmo
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+    <div class="row" style="padding: 20px 0;">
+      <div class="col-3" v-for="(item, index) in card" :key="index" :card="card" >
+        <div>
+          <div class="cards">
+            <div class="card">
+              <div class="img-wrapper">
+                <img :src="item.url" alt="Logo">
+              </div>
+              <div class="items">
+                <a class="item-link"  target="_blank" :href="item.site_url">{{item.title}}</a>
+                <p class="description">{{item.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: "Home",
+  data(){
+    return{
+      card:[
+        {
+          url: '/logo1.svg',
+          title: 'cliply.co',
+          site_url: 'https://cliply.co',
+          description: 'Grab their attention with stock animated gifs crafted for commercial use.'
+        },
+        {
+          url: '/lapa.svg',
+          title: 'cliply.co',
+          site_url: 'https://cliply.co',
+          description: 'Grab their attention with stock animated gifs crafted for commercial use.'
+        },
+        {
+          url: '/pages.svg',
+          title: 'cliply.co',
+          site_url: 'https://cliply.co',
+          description: 'Grab their attention with stock animated gifs crafted for commercial use.'
+        },
+        {
+          url: '/logo1.svg',
+          title: 'cliply.co',
+          site_url: 'https://cliply.co',
+          description: 'Grab their attention with stock animated gifs crafted for commercial use.'
+        },
+        {
+          url: '/lapa.svg',
+          title: 'cliply.co',
+          site_url: 'https://cliply.co',
+          description: 'Grab their attention with stock animated gifs crafted for commercial use.'
+        },
+        {
+          url: '/pages.svg',
+          title: 'cliply.co',
+          site_url: 'https://cliply.co',
+          description: 'Grab their attention with stock animated gifs crafted for commercial use.'
+        },
+        {
+          url: '/logo1.svg',
+          title: 'cliply.co',
+          site_url: 'https://cliply.co',
+          description: 'Grab their attention with stock animated gifs crafted for commercial use.'
+        },
+        {
+          url: '/lapa.svg',
+          title: 'cliply.co',
+          site_url: 'https://cliply.co',
+          description: 'Grab their attention with stock animated gifs crafted for commercial use.'
+        },
+        {
+          url: '/pages.svg',
+          title: 'cliply.co',
+          site_url: 'https://cliply.co',
+          description: 'Grab their attention with stock animated gifs crafted for commercial use.'
+        },
+
+      ]
+    }
+  }
+}
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+
+.card{
+  border: none;
+}
+.img-wrapper{
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  height: 15rem;
+  width: 15rem;
+  background: #F5F5F5;
+}
+.img-wrapper img{
+  pointer-events: none;
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.items{
+  padding: 15px 0;
+}
+.items .item-link, .items .item-link:hover{
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  color: #1D1D1D;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.items .description{
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+
 }
 
-.links {
-  padding-top: 15px;
-}
 </style>
